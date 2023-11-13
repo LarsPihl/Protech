@@ -10,7 +10,7 @@ var maxNum = images.length, imageName = document.getElementsByClassName("imgName
 imgText = document.getElementsByClassName("imgText"), imgDiv = document.getElementsByClassName("imgDiv"),
 circleArea1 = document.getElementsByClassName("circleArea1"), circleArea2 = document.getElementsByClassName("circleArea2"),
 circleArea3 = document.getElementsByClassName("circleArea3"), circleArea4 = document.getElementsByClassName("circleArea4"),
-mail = document.getElementById("mail"), form = document.getElementById("form")
+mail = document.getElementById("mail"), form = document.getElementById("form"), message = document.getElementById("message").innerHTML;
 ;
 
 var numberOfImgDivs = imgDiv.length, randomNumber = Math.floor(Math.random() * (maxNum-(numberOfImgDivs-1)));
@@ -21,8 +21,18 @@ changeCircle(circleArea3, 0);
 changeCircle(circleArea4, 0);
 createThreeDivs();
 
-changeNewsLetter(0);
+var isFirstLoad = localStorage.getItem('isFirstLoad');
 
+if (!isFirstLoad) {
+    changeNewsLetter(0);
+ localStorage.setItem('isFirstLoad', 'true');
+}
+
+else {
+    changeNewsLetter(1);
+    if (message.length > 0) alert(message);
+    window.location.assign("index.php#newsLetter");
+}
 
 if (window.innerWidth >= 480) {
     window.addEventListener("resize", checkSize);
@@ -100,6 +110,7 @@ mail.style.height = "0px";
 form.style.visibility = "visible";
 form.style.width = "55%";
 form.style.height = "50px";
+return;
         }
 
         else {

@@ -130,7 +130,7 @@ require "functions.php";
          <button type="submit" value="submit" name="submit">Prenumerera</button>
        </form>
        
-       <?php echo($_SESSION['message'][0]); ?>
+       <div id = "message"><?php echo($_SESSION['message'][0]); ?></div>
 
        </div>
 
@@ -146,6 +146,6 @@ require "functions.php";
 </footer>
 
 <script src = "js.js"></script>
-    
+
 </body>
 </html>
