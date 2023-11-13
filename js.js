@@ -7,11 +7,22 @@ var images = [
 ];
 
 var maxNum = images.length, imageName = document.getElementsByClassName("imgName"), imageSrc = document.getElementsByClassName("img"),
-imgText = document.getElementsByClassName("imgText"), imgDiv = document.getElementsByClassName("imgDiv");
+imgText = document.getElementsByClassName("imgText"), imgDiv = document.getElementsByClassName("imgDiv"),
+circleArea1 = document.getElementsByClassName("circleArea1"), circleArea2 = document.getElementsByClassName("circleArea2"),
+circleArea3 = document.getElementsByClassName("circleArea3"), circleArea4 = document.getElementsByClassName("circleArea4"),
+mail = document.getElementById("mail"), form = document.getElementById("form")
+;
 
 var numberOfImgDivs = imgDiv.length, randomNumber = Math.floor(Math.random() * (maxNum-(numberOfImgDivs-1)));
 
+changeCircle(circleArea1, 0);
+changeCircle(circleArea2, 0);
+changeCircle(circleArea3, 0);
+changeCircle(circleArea4, 0);
 createThreeDivs();
+
+changeNewsLetter(0);
+
 
 if (window.innerWidth >= 480) {
     window.addEventListener("resize", checkSize);
@@ -66,3 +77,38 @@ function changeOneImage(indexChange) {
     }
 }
 }//changeOneImage
+
+function changeCircle(area, index) {
+    for (let i = 0; i < area.length; i++) {
+        area[i].style.backgroundColor = "inherit";
+        area[i].style.width = "100%";
+        if (i == index) {
+            area[i].style.backgroundColor = "black";
+            area[i].style.borderRadius = "50%";
+            area[i].style.width = "75%";
+        }
+    
+    }//for
+    }//changeCircle
+
+    function changeNewsLetter (index) {
+        changeCircle(circleArea4, index);
+        if (index == 1) {
+mail.style.visibility = "hidden";
+mail.style.width = "0px";
+mail.style.height = "0px";
+form.style.visibility = "visible";
+form.style.width = "55%";
+form.style.height = "50px";
+        }
+
+        else {
+            form.style.visibility = "hidden";
+form.style.width = "0px";
+form.style.height = "0px";
+mail.style.visibility = "visible";
+mail.style.width = "55%";
+mail.style.height = "50px";
+        }
+
+    }

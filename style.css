@@ -6,6 +6,8 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    font-family: 'IBM', Arial, Helvetica, sans-serif;
+
 }
 
 header {
@@ -44,15 +46,10 @@ nav a {
     margin-top: -17.5px;
 }
 
-/*nav img {
-    margin-left: 2.5%;
-    margin-top: -35px;
-    
-}*/
-
 .hidden {
     visibility: hidden;
     width: 0px;
+    height: 0px;
 }
 
 .imgButtons {
@@ -83,7 +80,6 @@ nav a {
 }
 
 .mobileImage {
-    height: 800px;
     max-width: 576px;
     width: 100vw;
     text-align: left;
@@ -92,7 +88,6 @@ nav a {
 
 .mobileImage h1 {
     font-size: 24px;
-    font-family: 'IBM', Arial, Helvetica, sans-serif;
     font-weight: 300;
 }
 
@@ -103,6 +98,56 @@ border:none;
 
 #mobileImage1 {
     background-color: #EDEDED;
+    height: 800px;
+}
+
+#firstImageFooter {
+    height: 69px;
+    background-color: #D9D9D9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.smallerMobileImages {
+    height: 518px;
+}
+
+.smallerMobileImages .productHeader {
+    margin-top: 45px;
+}
+
+#mobileImage2 {
+    background-color: #C6C6C6;
+}
+
+#mobileImage3 {
+    background-color: #7E7E7E;
+}
+
+#mobileImage4 {
+    background-color: #A59B9B;
+}
+
+.smallerMobileImages .readMore {
+    
+    background-color: inherit;
+    margin-top: 280px;
+}
+
+.circles {
+   margin-top: 10px;
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+}
+
+.circles button {
+    background-color: inherit;
 }
 
 @font-face {
@@ -126,6 +171,61 @@ border:none;
 a {
     text-decoration: none;
     color: black;
+}
+
+#newsLetter {
+    height: 450px;
+    background-color: #D9D9D9;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+}
+
+#newsLetter .circles {
+
+    position:absolute;
+    top: 380px;
+}
+
+#mail, #form {
+    position: absolute;
+    top: 80px;
+    margin-top: 0px;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#arrow, #arrowButton {
+    background-color: #D9D9D9;
+    margin-top: 30px;
+}
+
+#emailInput {
+    margin: 50px 0px;
+}
+
+#smallLabel {
+    text-align: left;
+    font-size: 10px;
+    margin-left: 5%;
+}
+
+footer {
+    height: 241px;
+    background-color: #5C5B5B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
 }
 
 @media screen and (min-width: 576px) {
