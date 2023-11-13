@@ -10,7 +10,6 @@ if (!(isset($_SESSION['emails']))) {
 
     $message = $_SESSION['message'];
 
-
 $emails = $_SESSION['emails'];
 
 if (isset($_POST['submit'])) {
@@ -29,5 +28,3 @@ $_SESSION['message'] = $message;
 }
 
 $_SESSION['emails'] = $emails;
-
-print_r($_SESSION['emails']);

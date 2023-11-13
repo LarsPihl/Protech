@@ -15,9 +15,36 @@ require "functions.php";
       </head>
 </head>
 <body>
-    <div class = "imgButtons">
+
+<header>
+  <nav>
+    <img src = "/images/hamburgermeny.svg" alt = "menu">
+    <a class = "hidden">Rubrik</a>
+    <a class = "hidden">Rubrik</a>
+    <a></a>
+    <img src = "images/Logga.svg" alt = "Logo">
+
+    <a class = "hidden">Rubrik</a>
+    <a class = "hidden">Rubrik</a>
+    <img id = "search" src = "images/search.svg" alt = "search">
+    <img id = "cart" src = "images/cart.svg" alt = "shopping cart">
+  </nav>
+  
+</header>
+
+<div class = "mobileImage" id = "mobileImage1">
+
+<h1 class = "productHeader marginLeft">Produktnamn</h1>
+<h1 class = "marginLeft"><a href = "index.php">Mer information</a></h1>
+<button class = "marginLeft"><img src = "images/buyButton.svg"></button>
+<br>
+<button class = "marginLeft"><img src = "images/readMoreButton.svg"></button>
+
+</div>
+
+    <div class = "imgButtons hidden">
 <button onclick = "changeImage(-1);"><</button>
-<div class = "imgDiv">
+<div class = "imgDiv hidden">
 <h2 class = "imgName"></h2>
 <img class = "img">
 <p class = "imgText"></p>
@@ -29,7 +56,7 @@ require "functions.php";
 <p class = "imgText"></p>
 </div>
 
-<div class = "imgDiv">
+<div class = "imgDiv hidden">
 <h2 class = "imgName"></h2>
 <img class = "img">
 <p class = "imgText"></p>

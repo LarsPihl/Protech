@@ -11,17 +11,34 @@ imgText = document.getElementsByClassName("imgText"), imgDiv = document.getEleme
 
 var numberOfImgDivs = imgDiv.length, randomNumber = Math.floor(Math.random() * (maxNum-(numberOfImgDivs-1)));
 
-for (let i = 0; i < numberOfImgDivs; i++) {
-    imageName[i].innerHTML = images[randomNumber + i].name;
-    imageSrc[i].src = images[randomNumber + i].image;
-    imgText[i].innerHTML = images[randomNumber + i].text;
+createThreeDivs();
+
+if (window.innerWidth >= 480) {
+    window.addEventListener("resize", checkSize);
 }
-/*imageName.innerHTML = images[randomNumber].name;
-imageSrc.src = images[randomNumber].image;
-imgText.innerHTML = images[randomNumber].text;*/
+
+window.addEventListener("resize", checkSize);
+
+function checkSize() {
+   if (window.innerWidth >= 480)
+   createThreeDivs();
+}
+
+function createThreeDivs () {
+    for (let i = 0; i < numberOfImgDivs; i++) {
+        imageName[i].innerHTML = images[randomNumber + i].name;
+        imageSrc[i].src = images[randomNumber + i].image;
+        imgText[i].innerHTML = images[randomNumber + i].text;
+    
+    }
+}
 
 
 function changeImage(indexChange) {
+    if (window.innerWidth < 480) {
+        changeOneImage(indexChange);
+        return;
+    }
     for (let i = 0; i < maxNum; i++) {
         if (imageName[0].innerHTML == images[i].name) {
             if ((i + indexChange) >= 0 && (i + indexChange + numberOfImgDivs) <= maxNum) {
@@ -31,11 +48,21 @@ function changeImage(indexChange) {
             imgText[j].innerHTML = images[i + indexChange + j].text;
                 }
             }
-        
-        return;
-            
-           
+    
         }//if
     }//for
 
 }//function changeImage
+
+function changeOneImage(indexChange) {
+    for (let i = 0; i < maxNum; i++) {
+    if (imageName[1].innerHTML == images[i].name) {
+        if ((i + indexChange) >= 0 && (i + indexChange) <= maxNum) {
+            imageName[1].innerHTML = images[i + indexChange].name;
+            imageSrc[1].src = images[i + indexChange].image;
+            imgText[1].innerHTML = images[i + indexChange].text;
+            return;
+        }
+    }
+}
+}//changeOneImage
