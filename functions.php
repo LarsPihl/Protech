@@ -4,7 +4,6 @@ session_start();
 
 if (!(isset($_SESSION['emails']))) $_SESSION['emails'] = [];
 
-
     $_SESSION['message'] = [];
 
     $message = $_SESSION['message'];

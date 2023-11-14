@@ -10,7 +10,8 @@ var maxNum = images.length, imageName = document.getElementsByClassName("imgName
 imgText = document.getElementsByClassName("imgText"), imgDiv = document.getElementsByClassName("imgDiv"),
 circleArea1 = document.getElementsByClassName("circleArea1"), circleArea2 = document.getElementsByClassName("circleArea2"),
 circleArea3 = document.getElementsByClassName("circleArea3"), circleArea4 = document.getElementsByClassName("circleArea4"),
-mail = document.getElementById("mail"), form = document.getElementById("form"), message = document.getElementById("message").innerHTML;
+mail = document.getElementById("mail"), form = document.getElementById("form"), message = document.getElementById("message").innerHTML,
+header = document.getElementById("header"), hamburgerMenu = document.getElementById("hamburgerMenu")
 ;
 
 var numberOfImgDivs = imgDiv.length, randomNumber = Math.floor(Math.random() * (maxNum-(numberOfImgDivs-1)));
@@ -20,19 +21,18 @@ changeCircle(circleArea2, 0);
 changeCircle(circleArea3, 0);
 changeCircle(circleArea4, 0);
 createThreeDivs();
+hamburgerMenu.style.visibility = "hidden";
 
-var isFirstLoad = localStorage.getItem('isFirstLoad');
 
-if (!isFirstLoad) {
-    changeNewsLetter(0);
- localStorage.setItem('isFirstLoad', 'true');
-}
+if (message.length == 0) changeNewsLetter(0);
 
-else {
-    changeNewsLetter(1);
-    if (message.length > 0) alert(message);
-    window.location.assign("index.php#newsLetter");
-}
+else changeNewsLetter(1);
+   
+document.addEventListener("scroll", (event) => {
+    lastKnownScrollPosition = window.scrollY;
+    if (lastKnownScrollPosition >= 700) header.style.backgroundColor = "white";
+    else header.style.backgroundColor = "transparent";
+})
 
 if (window.innerWidth >= 480) {
     window.addEventListener("resize", checkSize);
@@ -41,8 +41,9 @@ if (window.innerWidth >= 480) {
 window.addEventListener("resize", checkSize);
 
 function checkSize() {
-   if (window.innerWidth >= 480)
+   if (window.innerWidth >= 560) {
    createThreeDivs();
+}
 }
 
 function createThreeDivs () {
@@ -120,6 +121,14 @@ form.style.height = "0px";
 mail.style.visibility = "visible";
 mail.style.width = "55%";
 mail.style.height = "50px";
+document.getElementById("message").innerHTML = "";
         }
 
+    }
+
+    function alterHamburgerMeny() {
+        if (hamburgerMenu.style.visibility == "hidden") 
+        hamburgerMenu.style.visibility = "visible";
+
+    else hamburgerMenu.style.visibility = "hidden";
     }

@@ -17,9 +17,9 @@ require "functions.php";
 </head>
 <body>
 
-<header>
+<header id = "header">
   <nav>
-    <img src = "/images/hamburgermeny.svg" alt = "menu">
+    <img src = "/images/hamburgermeny.svg" alt = "menu" onclick="alterHamburgerMeny()">
     <a class = "hidden">Rubrik</a>
     <a class = "hidden">Rubrik</a>
     <a></a>
@@ -32,6 +32,15 @@ require "functions.php";
   </nav>
   
 </header>
+
+<div id = "hamburgerMenu" class = "hidden">
+
+  <a>Rubrik</a>
+  <a>Rubrik</a>
+  <a>Rubrik</a>
+  <a>Rubrik</a>
+
+</div>
 
 <div class = "mobileImage" id = "mobileImage1">
 
@@ -81,7 +90,7 @@ require "functions.php";
 
 <h1 class = "productHeader marginLeft">Produktnamn</h1>
 <h1 class = "marginLeft"><a href = "index.php">Mer information</a></h1>
-<button class = "marginLeft readMore"><img src = "images/readMoreButton.svg"></button>
+<button id = "lastReadMoreButton" class = "marginLeft readMore"><img src = "images/readMoreButton.svg"></button>
 <div class = "circles">
 <button onclick = "changeCircle(circleArea3, 0)"><img class = "circleArea3" src = "images/circle.svg" alt = "Circle"></button>
 <button onclick = "changeCircle(circleArea3, 1)"><img class = "circleArea3" src = "images/circle.svg" alt = "Circle"></button>
@@ -125,7 +134,7 @@ require "functions.php";
 </div>
 <div id = "form">
   <h3>VÅRT NYHETSBREV</h3>
-<form action="" method="POST">
+<form action="index.php#lastReadMoreButton" method="POST">
          <input type="email" id="email" name="email" placeholder="Din mailadress">
          <button type="submit" value="submit" name="submit">Prenumerera</button>
        </form>
