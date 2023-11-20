@@ -19,11 +19,11 @@ require "functions.php";
 
 <header id = "header">
   <nav>
-    <img src = "/images/hamburgermeny.svg" alt = "menu" onclick="alterHamburgerMeny()">
+    <img src = "images/hamburgermeny.svg" alt = "menu" onclick="alterHamburgerMeny()">
     <a class = "hidden">Rubrik</a>
     <a class = "hidden">Rubrik</a>
     <a></a>
-    <img src = "images/Logga.svg" alt = "Logo">
+    <img src = "images/logga.svg" alt = "Logo">
 
     <a class = "hidden">Rubrik</a>
     <a class = "hidden">Rubrik</a>
@@ -35,17 +35,25 @@ require "functions.php";
 
 <div id = "hamburgerMenu" class = "hidden">
 
-  <a>Rubrik</a>
-  <a>Rubrik</a>
-  <a>Rubrik</a>
-  <a>Rubrik</a>
+  <a>Produkter</a>
+  <a>Nyheter</a>
+  <a>Om oss</a>
+  <a>Support</a>
+
+  <div id = "hamburgerLogos">
+    <img id = "langImg" src = "images/langSE.svg" onclick = "changeLanguage()" alt = "Swedish">
+    <img src = "images/instagram.svg" alt = "Language">
+    <img src = "images/facebook.svg" alt = "Language">
+    <img src = "images/youtube.svg" alt = "Language">
+
+  </div>
 
 </div>
 
 <div id = "newsLetter" class = "mobileImage">
 
 <div id = "mail">
-<h1 class = "productHeader">Produktnamn</h1>
+<h1 id = "productName" class = "productHeader">Produktnamn</h1>
 <h1 id = "mailh1"><a href = "index.php">Mer information</a></h1>
 <button id = "borderButton">Läs mer om produkten</button>
 <br>
@@ -61,7 +69,7 @@ require "functions.php";
         
        </form>
        
-       <div id = "message"><?php echo($_SESSION['message'][0]); ?></div>
+       <div id = "message"><?php if (isset ($_SESSION['message'][0])) echo($_SESSION['message'][0]);?></div>
 
        </div>
 

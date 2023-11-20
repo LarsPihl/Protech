@@ -1,17 +1,35 @@
-var images = [
-    {name : "name 1", image : "https://www.ikea.com/se/sv/images/products/brimnes-tv-baenk-svart__0851278_pe725293_s5.jpg", text : "Text about object 1"},
-    {name : "name 2", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", text : "Text about object 2"},
-    {name : "name 3", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", text : "Text about object 3"},
-    {name : "name 4", image : "https://www.netonnet.se/GetFile/ProductImage/tv/46-55tum/andersson-qled5531uhda(1023957)_521395_3_Normal_Large-1.jpg", text : "Text about object 4"},
-    {name : "name 5", image : "https://images.samsung.com/is/image/samsung/p6pim/se/ue32t4305aexxc/gallery/se-hd-t4300-ue32t4305aexxc-536698408?$650_519_PNG$", text : "Text about object 5"}
+var images1 = [
+    {name : "name 11", image : "https://www.ikea.com/se/sv/images/products/brimnes-tv-baenk-svart__0851278_pe725293_s5.jpg", text : "Text about object 1"},
+    {name : "name 12", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", text : "Text about object 2"},
+    {name : "name 13", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", text : "Text about object 3"},
+    {name : "name 14", image : "https://www.netonnet.se/GetFile/ProductImage/tv/46-55tum/andersson-qled5531uhda(1023957)_521395_3_Normal_Large-1.jpg", text : "Text about object 4"},
+    {name : "name 15", image : "https://images.samsung.com/is/image/samsung/p6pim/se/ue32t4305aexxc/gallery/se-hd-t4300-ue32t4305aexxc-536698408?$650_519_PNG$", text : "Text about object 5"}
 ];
 
-var maxNum = images.length, imageName = document.getElementsByClassName("imgName"), imageSrc = document.getElementsByClassName("img"),
+var images2 = [
+    {name : "name 21", image : "https://www.ikea.com/se/sv/images/products/brimnes-tv-baenk-svart__0851278_pe725293_s5.jpg", text : "Text about object 1"},
+    {name : "name 22", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", text : "Text about object 2"},
+    {name : "name 23", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", text : "Text about object 3"},
+    {name : "name 24", image : "https://www.netonnet.se/GetFile/ProductImage/tv/46-55tum/andersson-qled5531uhda(1023957)_521395_3_Normal_Large-1.jpg", text : "Text about object 4"},
+    {name : "name 25", image : "https://images.samsung.com/is/image/samsung/p6pim/se/ue32t4305aexxc/gallery/se-hd-t4300-ue32t4305aexxc-536698408?$650_519_PNG$", text : "Text about object 5"}
+];
+
+var images3 = [
+    {name : "name 31", image : "https://www.ikea.com/se/sv/images/products/brimnes-tv-baenk-svart__0851278_pe725293_s5.jpg", text : "Text about object 1"},
+    {name : "name 32", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", text : "Text about object 2"},
+    {name : "name 33", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", text : "Text about object 3"},
+    {name : "name 34", image : "https://www.netonnet.se/GetFile/ProductImage/tv/46-55tum/andersson-qled5531uhda(1023957)_521395_3_Normal_Large-1.jpg", text : "Text about object 4"},
+    {name : "name 35", image : "https://images.samsung.com/is/image/samsung/p6pim/se/ue32t4305aexxc/gallery/se-hd-t4300-ue32t4305aexxc-536698408?$650_519_PNG$", text : "Text about object 5"}
+];
+
+var maxNum = images1.length, imageName = document.getElementsByClassName("imgName"), imageSrc = document.getElementsByClassName("img"),
 imgText = document.getElementsByClassName("imgText"), imgDiv = document.getElementsByClassName("imgDiv"),
 circleArea1 = document.getElementsByClassName("circleArea1"), circleArea2 = document.getElementsByClassName("circleArea2"),
 circleArea3 = document.getElementsByClassName("circleArea3"), circleArea4 = document.getElementsByClassName("circleArea4"),
 mail = document.getElementById("mail"), form = document.getElementById("form"), message = document.getElementById("message").innerHTML,
-header = document.getElementById("header"), hamburgerMenu = document.getElementById("hamburgerMenu")
+header = document.getElementById("header"), hamburgerMenu = document.getElementById("hamburgerMenu"), lang = document.getElementById("langImg"),
+productName = document.getElementById("productName"), smallerMobileImages = document.getElementsByClassName("smallerMobileImages"), 
+circleClass = document.getElementsByClassName("circles")
 ;
 
 var numberOfImgDivs = imgDiv.length, randomNumber = Math.floor(Math.random() * (maxNum-(numberOfImgDivs-1)));
@@ -19,8 +37,7 @@ var numberOfImgDivs = imgDiv.length, randomNumber = Math.floor(Math.random() * (
 changeCircle(circleArea1, 0);
 changeCircle(circleArea2, 0);
 changeCircle(circleArea3, 0);
-changeCircle(circleArea4, 0);
-createThreeDivs();
+//createThreeDivs();
 hamburgerMenu.style.visibility = "hidden";
 
 
@@ -34,7 +51,7 @@ document.addEventListener("scroll", (event) => {
     else header.style.backgroundColor = "transparent";
 })
 
-if (window.innerWidth >= 480) {
+/*if (window.innerWidth >= 480) {
     window.addEventListener("resize", checkSize);
 }
 
@@ -44,17 +61,16 @@ function checkSize() {
    if (window.innerWidth >= 560) {
    createThreeDivs();
 }
-}
+}*/
 
-function createThreeDivs () {
+/*function createThreeDivs () {
     for (let i = 0; i < numberOfImgDivs; i++) {
         imageName[i].innerHTML = images[randomNumber + i].name;
         imageSrc[i].src = images[randomNumber + i].image;
         imgText[i].innerHTML = images[randomNumber + i].text;
     
     }
-}
-
+}*//*
 
 function changeImage(indexChange) {
     if (window.innerWidth < 480) {
@@ -89,6 +105,8 @@ function changeImage(indexChange) {
 }
 }//changeOneImage*/
 
+
+
 function changeCircle(area, index) {
     for (let i = 0; i < area.length; i++) {
         area[i].style.backgroundColor = "inherit";
@@ -100,10 +118,31 @@ function changeCircle(area, index) {
         }
     
     }//for
+    changeContent(area, index);
     }//changeCircle
 
+    function changeContent (area, index) {
+        let mobileSection;
+
+        for (let i = 0; i < circleClass.length+1; i++) {
+            if (area[0].className == "circleArea" + i) {
+                mobileSection = document.getElementsByClassName("smallerMobileImages")[i];
+                let productHeader = document.getElementsByClassName("productHeader")[i];
+                let objectArray = findObjectArray(i);
+                productHeader.innerHTML = objectArray[index].name;
+            }//if
+    }//for
+}//function
+
+function findObjectArray(i) {
+    if (i == 1) objectArray = images1;
+    else if (i == 2) objectArray = images2;
+    else if (i == 3) objectArray = images3;
+    return objectArray;
+}
+
     function changeNewsLetter (index) {
-        changeCircle(circleArea4, index);
+        //changeCircle(circleArea4, index);
         if (index == 1) {
 form.style.visibility = "visible";
 form.style.width = "80vw";
@@ -127,10 +166,25 @@ document.getElementById("message").innerHTML = "";
     }
 
     function alterHamburgerMeny() {
-        if (hamburgerMenu.style.visibility == "hidden") 
-        hamburgerMenu.style.visibility = "visible";
+        if (hamburgerMenu.style.visibility == "hidden") {
+            hamburgerMenu.style.visibility = "visible";
+            
+          } else {
+            hamburgerMenu.style.visibility = "hidden";
+          }
+    }
 
-    else hamburgerMenu.style.visibility = "hidden";
+    function changeLanguage() {
+        if (lang.alt == "Swedish") {
+            lang.src = "images/langEN.svg";
+            lang.alt = "English";
+            productName.innerHTML = "Product Name";
+        }
+        else  {
+            lang.src = "images/langSE.svg";
+            lang.alt = "Swedish";
+            productName.innerHTML = "Produktnamn";
+        }
     }
 
    
