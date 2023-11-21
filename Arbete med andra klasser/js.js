@@ -1,3 +1,5 @@
+var poster = {name: "Huvudprodukt", image : "https://mylapel.se/cdn/shop/products/watch-classic-gold-and-black-watch-1_1024x.jpg?v=1536062908", moreInfo : "More information", text : "Text about watch"};
+
 var images1 = [
     {name : "name 11", image : "https://www.ikea.com/se/sv/images/products/brimnes-tv-baenk-svart__0851278_pe725293_s5.jpg", moreInfo : "More info", text : "Text about object 1"},
     {name : "name 12", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", moreInfo : "More info", text : "Text about object 2"},
@@ -25,15 +27,23 @@ mail = document.getElementById("mail"), form = document.getElementById("form"), 
 header = document.getElementById("header"), hamburgerMenu = document.getElementById("hamburgerMenu"), lang = document.getElementById("langImg"),
 productName = document.getElementById("productName"), smallerMobileImages = document.getElementsByClassName("smallerMobileImages"), 
 circleClass = document.getElementsByClassName("circles"), productText = document.getElementsByClassName("mobileImageText"),
-moreInfoText = document.getElementsByClassName("moreInfoText");
+moreInfoText = document.getElementsByClassName("moreInfoText"), firstProductButton = document.getElementById("borderButton"),
+mainInfo = document.getElementById("mainInfo"), mainImage = document.getElementById("mainImage"),
+mainText = document.getElementById("mainText")
 ;
 
 var numberOfImgDivs = imgDiv.length, randomNumber = Math.floor(Math.random() * (maxNum-(numberOfImgDivs-1)));
 
+productName.innerHTML = poster.name;
+mainInfo.innerHTML = poster.moreInfo;
+mainImage.src = poster.image;
+mainText.innerHTML = poster.text;
+
 changeCircle(circleArea1, 0);
 changeCircle(circleArea2, 0);
 changeCircle(circleArea3, 0);
-//createThreeDivs();
+
+mainText.style.visibility = "hidden";
 hamburgerMenu.style.visibility = "hidden";
 for (let i = 0; i < productText.length; i++) 
 productText[i].style.visibility = "hidden";
@@ -188,12 +198,12 @@ document.getElementById("message").innerHTML = "";
         if (lang.alt == "Swedish") {
             lang.src = "images/langEN.svg";
             lang.alt = "English";
-            productName.innerHTML = "Product Name";
+            firstProductButton.innerHTML = "Find out more about this product";
         }
         else  {
             lang.src = "images/langSE.svg";
             lang.alt = "Swedish";
-            productName.innerHTML = "Produktnamn";
+            firstProductButton.innerHTML = "Läs mer om produkten";
         }
     }
 

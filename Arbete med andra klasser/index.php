@@ -54,8 +54,10 @@ require "functions.php";
 
 <div id = "mail">
 <h1 id = "productName" class = "productHeader">Produktnamn</h1>
-<h1 id = "mailh1"><a href = "index.php">Mer information</a></h1>
-<button id = "borderButton">Läs mer om produkten</button>
+<h1 id = "mailh1"><a href = "index.php" id = "mainInfo">Mer information</a></h1>
+<img id = "mainImage" alt = "">
+<p class = "hidden" id = "mainText" onclick = "displayText(mainText);"></p>
+<button id = "borderButton" onclick = "displayText(mainText);">Läs mer om produkten</button>
 <br>
 <button id = "borderButton" class = "blackButton" onclick = "changeNewsLetter(1)">Prenumerera på vårt nyhetsbrev</button>
 </div>
@@ -79,7 +81,7 @@ require "functions.php";
 
 <div><img src = "images/truck.svg" alt = "Carbon Delivery"><span>Fri frakt & retur</span></div>
 <div><img src = "images/securePayment.svg" alt = "Secure Payment"><span>Säker betalning</span></div>
-<div><img src = "images/Klarna.svg" alt = "Klarna Logo"><span>Fler betalningsalternativ</span></div>
+<div><img src = "images/klarna.svg" alt = "Klarna Logo"><span>Fler betalningsalternativ</span></div>
 
 </div><!--firstImageFooter-->
 
@@ -88,7 +90,7 @@ require "functions.php";
 <h1 class = "productHeader marginLeft">Produktnamn</h1>
 <h1 class = "marginLeft"><a href = "index.php" class = "moreInfoText">Mer information</a></h1>
 <img class = "mobileImageImage marginLeft" alt = "">
-<p class = "mobileImageText hidden"></p>
+<p class = "mobileImageText hidden" onclick = "displayText(productText[0]);"></p>
 <button class = "marginLeft readMore" id = "borderButton" onclick = "displayText(productText[0]);">Läs mer</button>
 <div class = "circles">
 <button onclick = "changeCircle(circleArea1, 0)"><img class = "circleArea1" src = "images/circle.svg" alt = "Circle"></button>
@@ -103,7 +105,7 @@ require "functions.php";
 <h1 class = "productHeader marginLeft">Produktnamn</h1>
 <h1 class = "marginLeft"><a href = "index.php" class = "moreInfoText">Mer information</a></h1>
 <img class = "mobileImageImage marginLeft" alt = "">
-<p class = "mobileImageText hidden"></p>
+<p class = "mobileImageText hidden" onclick = "displayText(productText[1]);"></p>
 <button id = "borderButton" class = "marginLeft readMore" onclick = "displayText(productText[1]);">Läs mer</button>
 <div class = "circles">
 <button onclick = "changeCircle(circleArea2, 0)"><img class = "circleArea2" src = "images/circle.svg" alt = "Circle"></button>
@@ -118,7 +120,7 @@ require "functions.php";
 <h1 class = "productHeader marginLeft">Produktnamn</h1>
 <h1 class = "marginLeft"><a href = "index.php" class = "moreInfoText">Mer information</a></h1>
 <img class = "mobileImageImage marginLeft" alt = "">
-<p class = "mobileImageText hidden"></p>
+<p class = "mobileImageText hidden" onclick = "displayText(productText[2]);"></p>
 <button id = "borderButton" class = "marginLeft readMore" onclick = "displayText(productText[2]);">Läs mer</button>
 <div class = "circles">
 <button onclick = "changeCircle(circleArea3, 0)"><img class = "circleArea3" src = "images/circle.svg" alt = "Circle"></button>
