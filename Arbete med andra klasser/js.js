@@ -1,25 +1,20 @@
 var images1 = [
-    {name : "name 11", image : "https://www.ikea.com/se/sv/images/products/brimnes-tv-baenk-svart__0851278_pe725293_s5.jpg", text : "Text about object 1"},
-    {name : "name 12", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", text : "Text about object 2"},
-    {name : "name 13", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", text : "Text about object 3"},
-    {name : "name 14", image : "https://www.netonnet.se/GetFile/ProductImage/tv/46-55tum/andersson-qled5531uhda(1023957)_521395_3_Normal_Large-1.jpg", text : "Text about object 4"},
-    {name : "name 15", image : "https://images.samsung.com/is/image/samsung/p6pim/se/ue32t4305aexxc/gallery/se-hd-t4300-ue32t4305aexxc-536698408?$650_519_PNG$", text : "Text about object 5"}
+    {name : "name 11", image : "https://www.ikea.com/se/sv/images/products/brimnes-tv-baenk-svart__0851278_pe725293_s5.jpg", moreInfo : "More info", text : "Text about object 1"},
+    {name : "name 12", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", moreInfo : "More info", text : "Text about object 2"},
+    {name : "name 13", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", moreInfo : "More info", text : "Text about object 3"}
 ];
 
 var images2 = [
-    {name : "name 21", image : "https://www.ikea.com/se/sv/images/products/brimnes-tv-baenk-svart__0851278_pe725293_s5.jpg", text : "Text about object 1"},
-    {name : "name 22", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", text : "Text about object 2"},
-    {name : "name 23", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", text : "Text about object 3"},
-    {name : "name 24", image : "https://www.netonnet.se/GetFile/ProductImage/tv/46-55tum/andersson-qled5531uhda(1023957)_521395_3_Normal_Large-1.jpg", text : "Text about object 4"},
-    {name : "name 25", image : "https://images.samsung.com/is/image/samsung/p6pim/se/ue32t4305aexxc/gallery/se-hd-t4300-ue32t4305aexxc-536698408?$650_519_PNG$", text : "Text about object 5"}
+    {name : "name 21", image : "https://www.ikea.com/se/sv/images/products/brimnes-tv-baenk-svart__0851278_pe725293_s5.jpg", moreInfo : "More info", text : "Text about object 1"},
+    {name : "name 22", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", moreInfo : "More info", text : "Text about object 2"},
+    {name : "name 23", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", moreInfo : "More info", text : "Text about object 3"}
+    
 ];
 
 var images3 = [
-    {name : "name 31", image : "https://www.ikea.com/se/sv/images/products/brimnes-tv-baenk-svart__0851278_pe725293_s5.jpg", text : "Text about object 1"},
-    {name : "name 32", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", text : "Text about object 2"},
-    {name : "name 33", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", text : "Text about object 3"},
-    {name : "name 34", image : "https://www.netonnet.se/GetFile/ProductImage/tv/46-55tum/andersson-qled5531uhda(1023957)_521395_3_Normal_Large-1.jpg", text : "Text about object 4"},
-    {name : "name 35", image : "https://images.samsung.com/is/image/samsung/p6pim/se/ue32t4305aexxc/gallery/se-hd-t4300-ue32t4305aexxc-536698408?$650_519_PNG$", text : "Text about object 5"}
+    {name : "name 31", image : "https://www.ikea.com/se/sv/images/products/brimnes-tv-baenk-svart__0851278_pe725293_s5.jpg", moreInfo : "More info", text : "Text about object 1"},
+    {name : "name 32", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", moreInfo : "More info", text : "Text about object 2"},
+    {name : "name 33", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", moreInfo : "More info", text : "Text about object 3"}
 ];
 
 var maxNum = images1.length, imageName = document.getElementsByClassName("imgName"), imageSrc = document.getElementsByClassName("img"),
@@ -29,7 +24,8 @@ circleArea3 = document.getElementsByClassName("circleArea3"), circleArea4 = docu
 mail = document.getElementById("mail"), form = document.getElementById("form"), message = document.getElementById("message").innerHTML,
 header = document.getElementById("header"), hamburgerMenu = document.getElementById("hamburgerMenu"), lang = document.getElementById("langImg"),
 productName = document.getElementById("productName"), smallerMobileImages = document.getElementsByClassName("smallerMobileImages"), 
-circleClass = document.getElementsByClassName("circles")
+circleClass = document.getElementsByClassName("circles"), productText = document.getElementsByClassName("mobileImageText"),
+moreInfoText = document.getElementsByClassName("moreInfoText");
 ;
 
 var numberOfImgDivs = imgDiv.length, randomNumber = Math.floor(Math.random() * (maxNum-(numberOfImgDivs-1)));
@@ -39,6 +35,8 @@ changeCircle(circleArea2, 0);
 changeCircle(circleArea3, 0);
 //createThreeDivs();
 hamburgerMenu.style.visibility = "hidden";
+for (let i = 0; i < productText.length; i++) 
+productText[i].style.visibility = "hidden";
 
 
 if (message.length == 0) changeNewsLetter(0);
@@ -105,6 +103,13 @@ function changeImage(indexChange) {
 }
 }//changeOneImage*/
 
+function displayText(paragraph) {
+    if (paragraph.style.visibility == "hidden")
+    paragraph.style.visibility = "visible";
+    else paragraph.style.visibility = "hidden";
+}
+
+
 
 
 function changeCircle(area, index) {
@@ -123,6 +128,7 @@ function changeCircle(area, index) {
 
     function changeContent (area, index) {
         let mobileSection;
+       
 
         for (let i = 0; i < circleClass.length+1; i++) {
             if (area[0].className == "circleArea" + i) {
@@ -130,6 +136,10 @@ function changeCircle(area, index) {
                 let productHeader = document.getElementsByClassName("productHeader")[i];
                 let objectArray = findObjectArray(i);
                 productHeader.innerHTML = objectArray[index].name;
+                document.getElementsByClassName("mobileImageImage")[i-1].src = objectArray[index].image;
+                productText[i-1].innerHTML = objectArray[index].text;
+                moreInfoText[i-1].innerHTML = objectArray[index].moreInfo;
+                
             }//if
     }//for
 }//function
@@ -187,4 +197,3 @@ document.getElementById("message").innerHTML = "";
         }
     }
 
-   

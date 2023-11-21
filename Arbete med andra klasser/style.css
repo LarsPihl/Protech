@@ -105,6 +105,15 @@ nav a {
     height: 100%;
 }
 
+
+.mobileImageImage {
+    display: block;
+    height: 280px;
+    max-width: 90vw;
+    
+   
+}
+
 #search, #cart {
     
     margin-right: 5%;
@@ -144,11 +153,34 @@ border:none;
 
 #firstImageFooter {
     height: 69px;
-    background-color: #D9D9D9;
+    background-color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+}
+
+#firstImageFooter img {
+    width: 36px;
+    
+}
+
+#firstImageFooter div{
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobileImageText {
+    position: fixed;
+    top:0px;
+    right:0px;
+    background-color: white;
+    height: 100vh;
+    width: 50vw;
+    z-index: 3;
 }
 
 .smallerMobileImages {
@@ -175,7 +207,7 @@ border:none;
     
     background-color: inherit;
     height: 50px;
-    margin-top: 280px;
+    margin-top: 10px;
 }
 
 .circles {
@@ -295,14 +327,89 @@ background-color: inherit;
     margin-left: 5%;
 }
 
-footer {
-    height: 241px;
-    background-color: #5C5B5B;
+#downloadApp {
+    height: 530px;
+    width: inherit;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: flex-start;
+}
+
+#phones {
+    height: 458px;
+    margin-top: -50px;
+    margin-bottom: -150px;
+}
+
+#downloadApp h3 {
+    font-size: 20px;
+    font-weight: 500;
+}
+#downloadApp p {
+    text-align: left;
+    width: 60vw;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#logosAndButton {
     width: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 15px;
+}
+
+#logosAndButton img {
+    margin-right: 3vw;
+}
+
+footer {
+    height: 279px;
+    background-color: #9C9C9C;
+    width: inherit;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+footer form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#left, #right {
+    margin: 0px 5vw;
+}
+
+#left p {
+    width: 60%;
+}
+
+.smallMailInput {
+    width: inherit;
+    height: 20px;
+    background-color: transparent;
+    font-size: 14px;
+}
+
+#smallButton, #smallArrow {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+}
+
+#smallArrow {
+    margin-bottom: -10px;
+}
+
+#smallButton {
+    border-bottom: 1px solid black;
+    margin-bottom: 6px;
 }
 
 @media screen and (min-width: 576px) {
