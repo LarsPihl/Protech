@@ -1,20 +1,20 @@
-var poster = {name: "Huvudprodukt", image : "https://mylapel.se/cdn/shop/products/watch-classic-gold-and-black-watch-1_1024x.jpg?v=1536062908", moreInfo : "More information", text : "Text about watch"};
+var poster = {name: "Huvudprodukt", image : "images/poster.svg", moreInfo : "More information", text : "Text about us"};
 
 var images1 = [
-    {name : "name 11", image : "https://www.ikea.com/se/sv/images/products/brimnes-tv-baenk-svart__0851278_pe725293_s5.jpg", moreInfo : "More info", text : "Text about object 1"},
+    {name : "name 11", image : "images/pinkWatch.svg", moreInfo : "More info", text : "Text about Pink Watch"},
     {name : "name 12", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", moreInfo : "More info", text : "Text about object 2"},
     {name : "name 13", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", moreInfo : "More info", text : "Text about object 3"}
 ];
 
 var images2 = [
-    {name : "name 21", image : "https://www.ikea.com/se/sv/images/products/brimnes-tv-baenk-svart__0851278_pe725293_s5.jpg", moreInfo : "More info", text : "Text about object 1"},
+    {name : "name 21", image : "images/sunburstGlasses.svg", moreInfo : "More info", text : "Text about Glasses"},
     {name : "name 22", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", moreInfo : "More info", text : "Text about object 2"},
     {name : "name 23", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", moreInfo : "More info", text : "Text about object 3"}
     
 ];
 
 var images3 = [
-    {name : "name 31", image : "https://www.ikea.com/se/sv/images/products/brimnes-tv-baenk-svart__0851278_pe725293_s5.jpg", moreInfo : "More info", text : "Text about object 1"},
+    {name : "name 31", image : "images/redShoes.svg", moreInfo : "More info", text : "Text about Shoes"},
     {name : "name 32", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", moreInfo : "More info", text : "Text about object 2"},
     {name : "name 33", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", moreInfo : "More info", text : "Text about object 3"}
 ];
@@ -24,11 +24,11 @@ imgText = document.getElementsByClassName("imgText"), imgDiv = document.getEleme
 circleArea1 = document.getElementsByClassName("circleArea1"), circleArea2 = document.getElementsByClassName("circleArea2"),
 circleArea3 = document.getElementsByClassName("circleArea3"), circleArea4 = document.getElementsByClassName("circleArea4"),
 mail = document.getElementById("mail"), form = document.getElementById("form"), message = document.getElementById("message").innerHTML,
-header = document.getElementById("header"), hamburgerMenu = document.getElementById("hamburgerMenu"), lang = document.getElementById("langImg"),
+header = document.getElementById("header"), hamburgerMenu = document.getElementById("hamburgerMenu"), lang = document.getElementsByClassName("langImg"),
 productName = document.getElementById("productName"), smallerMobileImages = document.getElementsByClassName("smallerMobileImages"), 
 circleClass = document.getElementsByClassName("circles"), productText = document.getElementsByClassName("mobileImageText"),
 moreInfoText = document.getElementsByClassName("moreInfoText"), firstProductButton = document.getElementById("borderButton"),
-mainInfo = document.getElementById("mainInfo"), mainImage = document.getElementById("mainImage"),
+mainInfo = document.getElementById("mainInfo"), mainImage = document.getElementsByClassName("mainImage"),
 mainText = document.getElementById("mainText")
 ;
 
@@ -36,7 +36,8 @@ var numberOfImgDivs = imgDiv.length, randomNumber = Math.floor(Math.random() * (
 
 productName.innerHTML = poster.name;
 mainInfo.innerHTML = poster.moreInfo;
-mainImage.src = poster.image;
+mainImage[0].style.backgroundImage = "url(" + poster.image + ")";
+mainImage[0].style.backgroundSize = "100vw";
 mainText.innerHTML = poster.text;
 
 changeCircle(circleArea1, 0);
@@ -124,7 +125,7 @@ function displayText(paragraph) {
 
 function changeCircle(area, index) {
     for (let i = 0; i < area.length; i++) {
-        area[i].style.backgroundColor = "inherit";
+        area[i].style.backgroundColor = "transparent";
         area[i].style.width = "100%";
         if (i == index) {
             area[i].style.backgroundColor = "black";
@@ -146,7 +147,8 @@ function changeCircle(area, index) {
                 let productHeader = document.getElementsByClassName("productHeader")[i];
                 let objectArray = findObjectArray(i);
                 productHeader.innerHTML = objectArray[index].name;
-                document.getElementsByClassName("mobileImageImage")[i-1].src = objectArray[index].image;
+                document.getElementsByClassName("mobileImageImage")[i-1].style.backgroundImage = "url(" + objectArray[index].image + ")";
+                document.getElementsByClassName("mobileImageImage")[i-1].style.backgroundSize = "100VW";
                 productText[i-1].innerHTML = objectArray[index].text;
                 moreInfoText[i-1].innerHTML = objectArray[index].moreInfo;
                 
@@ -195,15 +197,19 @@ document.getElementById("message").innerHTML = "";
     }
 
     function changeLanguage() {
-        if (lang.alt == "Swedish") {
-            lang.src = "images/langEN.svg";
-            lang.alt = "English";
-            firstProductButton.innerHTML = "Find out more about this product";
+        if (lang[0].alt == "Swedish") {
+            for (let i = 0; i < lang.length; i++) {
+            lang[i].src = "images/langEN.svg";
+            lang[i].alt = "English";
+            }
+            firstProductButton.innerHTML = "Find out more about us";
         }
         else  {
-            lang.src = "images/langSE.svg";
-            lang.alt = "Swedish";
-            firstProductButton.innerHTML = "Läs mer om produkten";
+            for (let i = 0; i < lang.length; i++) {
+            lang[i].src = "images/langSE.svg";
+            lang[i].alt = "Swedish";
+            }
+            firstProductButton.innerHTML = "Läs mer om oss";
         }
     }
 
