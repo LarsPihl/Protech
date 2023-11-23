@@ -1,40 +1,87 @@
-var images = [
-    {name : "name 1", image : "https://www.ikea.com/se/sv/images/products/brimnes-tv-baenk-svart__0851278_pe725293_s5.jpg", text : "Text about object 1"},
-    {name : "name 2", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", text : "Text about object 2"},
-    {name : "name 3", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", text : "Text about object 3"},
-    {name : "name 4", image : "https://www.netonnet.se/GetFile/ProductImage/tv/46-55tum/andersson-qled5531uhda(1023957)_521395_3_Normal_Large-1.jpg", text : "Text about object 4"},
-    {name : "name 5", image : "https://images.samsung.com/is/image/samsung/p6pim/se/ue32t4305aexxc/gallery/se-hd-t4300-ue32t4305aexxc-536698408?$650_519_PNG$", text : "Text about object 5"}
+var poster = {name: "Huvudprodukt", image : "images/poster.svg", moreInfo : "More information", text : "Text about us"};
+
+var images1 = [
+    {name : "name 11", image : "images/pinkWatch.svg", moreInfo : "More info", text : "Text about Pink Watch"},
+    {name : "name 12", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", moreInfo : "More info", text : "Text about object 2"},
+    {name : "name 13", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", moreInfo : "More info", text : "Text about object 3"}
 ];
 
-var maxNum = images.length, imageName = document.getElementsByClassName("imgName"), imageSrc = document.getElementsByClassName("img"),
+var images2 = [
+    {name : "name 21", image : "images/sunburstGlasses.svg", moreInfo : "More info", text : "Text about Glasses"},
+    {name : "name 22", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", moreInfo : "More info", text : "Text about object 2"},
+    {name : "name 23", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", moreInfo : "More info", text : "Text about object 3"}
+    
+];
+
+var images3 = [
+    {name : "name 31", image : "images/redShoes.svg", moreInfo : "More info", text : "Text about Shoes"},
+    {name : "name 32", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", moreInfo : "More info", text : "Text about object 2"},
+    {name : "name 33", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", moreInfo : "More info", text : "Text about object 3"}
+];
+
+var maxNum = images1.length, imageName = document.getElementsByClassName("imgName"), imageSrc = document.getElementsByClassName("img"),
 imgText = document.getElementsByClassName("imgText"), imgDiv = document.getElementsByClassName("imgDiv"),
 circleArea1 = document.getElementsByClassName("circleArea1"), circleArea2 = document.getElementsByClassName("circleArea2"),
 circleArea3 = document.getElementsByClassName("circleArea3"), circleArea4 = document.getElementsByClassName("circleArea4"),
 mail = document.getElementById("mail"), form = document.getElementById("form"), message = document.getElementById("message").innerHTML,
-header = document.getElementById("header"), hamburgerMenu = document.getElementById("hamburgerMenu")
+header = document.getElementById("header"), hamburgerMenu = document.getElementById("hamburgerMenu"), lang = document.getElementsByClassName("langImg"),
+productName = document.getElementById("productName"), smallerMobileImages = document.getElementsByClassName("smallerMobileImages"), 
+circleClass = document.getElementsByClassName("circles"), productText = document.getElementsByClassName("mobileImageText"),
+moreInfoText = document.getElementsByClassName("moreInfoText"), firstProductButton = document.getElementById("borderButton"),
+mainInfo = document.getElementById("mainInfo"), mainImage = document.getElementsByClassName("mainImage"),
+mainText = document.getElementById("mainText"), formArrows = document.getElementsByClassName("formArrows"),
+checkMarks = document.getElementsByClassName("checkMarks");
 ;
 
 var numberOfImgDivs = imgDiv.length, randomNumber = Math.floor(Math.random() * (maxNum-(numberOfImgDivs-1)));
 
+productName.innerHTML = poster.name;
+mainInfo.innerHTML = poster.moreInfo;
+mainImage[0].style.backgroundImage = "url(" + poster.image + ")";
+mainImage[0].style.backgroundSize = "100vw";
+mainText.innerHTML = poster.text;
+
 changeCircle(circleArea1, 0);
 changeCircle(circleArea2, 0);
 changeCircle(circleArea3, 0);
-changeCircle(circleArea4, 0);
-createThreeDivs();
+
+mainText.style.visibility = "hidden";
 hamburgerMenu.style.visibility = "hidden";
+for (let i = 0; i < productText.length; i++) 
+productText[i].style.visibility = "hidden";
 
 
 if (message.length == 0) changeNewsLetter(0);
 
 else changeNewsLetter(1);
+
+if (message == "Din mailadress har lagts till.") {
+    for (let i = 0; i < formArrows.length; i++) {
+    formArrows[i].src = "images/checkMark.svg";
+    formArrows[i].style.backgroundColor = "#43A047";
+    formArrows[i].src = "images/checkMark.svg";
+    formArrows[i].style.backgroundColor = "#43A047";
+    }
+    formArrows[1].style.width = "28px";
+    
+}
+
+else {
+    formArrows[0].src = "images/arrow.svg";
+    formArrows[1].src = "images/smallArrowBlack.svg";
+    
+    
    
+    
+
+}
 document.addEventListener("scroll", (event) => {
     lastKnownScrollPosition = window.scrollY;
     if (lastKnownScrollPosition >= 700) header.style.backgroundColor = "white";
     else header.style.backgroundColor = "transparent";
 })
 
-if (window.innerWidth >= 480) {
+/*if (window.innerWidth >= 480) {
     window.addEventListener("resize", checkSize);
 }
 
@@ -44,17 +91,16 @@ function checkSize() {
    if (window.innerWidth >= 560) {
    createThreeDivs();
 }
-}
+}*/
 
-function createThreeDivs () {
+/*function createThreeDivs () {
     for (let i = 0; i < numberOfImgDivs; i++) {
         imageName[i].innerHTML = images[randomNumber + i].name;
         imageSrc[i].src = images[randomNumber + i].image;
         imgText[i].innerHTML = images[randomNumber + i].text;
     
     }
-}
-
+}*//*
 
 function changeImage(indexChange) {
     if (window.innerWidth < 480) {
@@ -76,7 +122,7 @@ function changeImage(indexChange) {
 
 }//function changeImage
 
-function changeOneImage(indexChange) {
+/*function changeOneImage(indexChange) {
     for (let i = 0; i < maxNum; i++) {
     if (imageName[1].innerHTML == images[i].name) {
         if ((i + indexChange) >= 0 && (i + indexChange) <= maxNum) {
@@ -87,11 +133,17 @@ function changeOneImage(indexChange) {
         }
     }
 }
-}//changeOneImage
+}//changeOneImage*/
+
+function displayText(paragraph) {
+    if (paragraph.style.visibility == "hidden")
+    paragraph.style.visibility = "visible";
+    else paragraph.style.visibility = "hidden";
+}
 
 function changeCircle(area, index) {
     for (let i = 0; i < area.length; i++) {
-        area[i].style.backgroundColor = "inherit";
+        area[i].style.backgroundColor = "transparent";
         area[i].style.width = "100%";
         if (i == index) {
             area[i].style.backgroundColor = "black";
@@ -100,35 +152,82 @@ function changeCircle(area, index) {
         }
     
     }//for
+    changeContent(area, index);
     }//changeCircle
 
+    function changeContent (area, index) {
+        let mobileSection;
+       
+
+        for (let i = 0; i < circleClass.length+1; i++) {
+            if (area[0].className == "circleArea" + i) {
+                mobileSection = document.getElementsByClassName("smallerMobileImages")[i];
+                let productHeader = document.getElementsByClassName("productHeader")[i];
+                let objectArray = findObjectArray(i);
+                productHeader.innerHTML = objectArray[index].name;
+                document.getElementsByClassName("mobileImageImage")[i-1].style.backgroundImage = "url(" + objectArray[index].image + ")";
+                document.getElementsByClassName("mobileImageImage")[i-1].style.backgroundSize = "100VW";
+                productText[i-1].innerHTML = objectArray[index].text;
+                moreInfoText[i-1].innerHTML = objectArray[index].moreInfo;
+                
+            }//if
+    }//for
+}//function
+
+function findObjectArray(i) {
+    if (i == 1) objectArray = images1;
+    else if (i == 2) objectArray = images2;
+    else if (i == 3) objectArray = images3;
+    return objectArray;
+}
+
     function changeNewsLetter (index) {
-        changeCircle(circleArea4, index);
+        //changeCircle(circleArea4, index);
         if (index == 1) {
-mail.style.visibility = "hidden";
-mail.style.width = "0px";
-mail.style.height = "0px";
 form.style.visibility = "visible";
-form.style.width = "55%";
-form.style.height = "50px";
+form.style.width = "80vw";
+form.style.height = "480px";
+document.getElementById("newsLetter").style.alignItems = "center";
+document.getElementById("form").style.textAlign = "center";
+header.style.visibility = "hidden";
 return;
         }
 
         else {
+            
             form.style.visibility = "hidden";
+            header.style.visibility = "visible";
 form.style.width = "0px";
 form.style.height = "0px";
-mail.style.visibility = "visible";
-mail.style.width = "55%";
-mail.style.height = "50px";
+document.getElementById("newsLetter").style.alignItems = "";
 document.getElementById("message").innerHTML = "";
         }
 
     }
 
     function alterHamburgerMeny() {
-        if (hamburgerMenu.style.visibility == "hidden") 
-        hamburgerMenu.style.visibility = "visible";
-
-    else hamburgerMenu.style.visibility = "hidden";
+        if (hamburgerMenu.style.visibility == "hidden") {
+            hamburgerMenu.style.visibility = "visible";
+            
+          } else {
+            hamburgerMenu.style.visibility = "hidden";
+          }
     }
+
+    function changeLanguage() {
+        if (lang[0].alt == "Swedish") {
+            for (let i = 0; i < lang.length; i++) {
+            lang[i].src = "images/langEN.svg";
+            lang[i].alt = "English";
+            }
+            firstProductButton.innerHTML = "Find out more about us";
+        }
+        else  {
+            for (let i = 0; i < lang.length; i++) {
+            lang[i].src = "images/langSE.svg";
+            lang[i].alt = "Swedish";
+            }
+            firstProductButton.innerHTML = "Läs mer om oss";
+        }
+    }
+
