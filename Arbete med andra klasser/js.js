@@ -1,5 +1,3 @@
-var poster = {name: "Huvudprodukt", image : "images/poster.svg", moreInfo : "More information", text : "Text about us"};
-
 var images1 = [
     {name : "name 11", image : "images/pinkWatch.svg", moreInfo : "More info", text : "Text about Pink Watch"},
     {name : "name 12", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", moreInfo : "More info", text : "Text about object 2"},
@@ -29,20 +27,28 @@ productName = document.getElementById("productName"), smallerMobileImages = docu
 circleClass = document.getElementsByClassName("circles"), productText = document.getElementsByClassName("mobileImageText"),
 moreInfoText = document.getElementsByClassName("moreInfoText"), firstProductButton = document.getElementById("borderButton"),
 mainInfo = document.getElementById("mainInfo"), mainImage = document.getElementsByClassName("mainImage"),
-mainText = document.getElementById("mainText")
+mainText = document.getElementById("mainText"), formArrows = document.getElementsByClassName("formArrows")
+
 ;
 
 var numberOfImgDivs = imgDiv.length, randomNumber = Math.floor(Math.random() * (maxNum-(numberOfImgDivs-1)));
 
-productName.innerHTML = poster.name;
-mainInfo.innerHTML = poster.moreInfo;
-mainImage[0].style.backgroundImage = "url(" + poster.image + ")";
-mainImage[0].style.backgroundSize = "100vw";
-mainText.innerHTML = poster.text;
+
+
+/*Anropa ny funktion med ny area.
+Den första bilden har med circelarea 1, images 1 i kallelse osv.
+Kolla med rubrik vilket index som är aktuellt.
+Om det t.ex. är index 1 så flyttas allt till index 2 i objekt via let temp = index  + 1.
+Om nytt temp >= längden på objektet, så ska temp bli 0.
+När allt har bytts ut ska cirkelarean kallas med värdet av temp. changeCircle(circleAreax, temp)
+
+Lägg id = "0". När bild byts ska index returneras som id.*/
 
 changeCircle(circleArea1, 0);
 changeCircle(circleArea2, 0);
 changeCircle(circleArea3, 0);
+
+
 
 mainText.style.visibility = "hidden";
 hamburgerMenu.style.visibility = "hidden";
@@ -53,14 +59,44 @@ productText[i].style.visibility = "hidden";
 if (message.length == 0) changeNewsLetter(0);
 
 else changeNewsLetter(1);
-   
+
+if (message == "Din mailadress har lagts till.") {
+    for (let i = 0; i < formArrows.length; i++) {
+    formArrows[i].src = "images/checkMark.svg";
+    formArrows[i].style.backgroundColor = "#43A047";
+    formArrows[i].src = "images/checkMark.svg";
+    formArrows[i].style.backgroundColor = "#43A047";
+    }
+    formArrows[1].style.width = "28px";
+    formArrows[1].style.marginBottom = "-1px";
+    //document.getElementById("smallButton").style.borderBottom = "0px";
+    
+}
+
+else {
+    formArrows[0].src = "images/arrow.svg";
+    formArrows[1].src = "images/smallArrowBlack.svg";
+    
+}
 document.addEventListener("scroll", (event) => {
     lastKnownScrollPosition = window.scrollY;
-    if (lastKnownScrollPosition >= 700) header.style.backgroundColor = "white";
+    if (lastKnownScrollPosition >= 300) header.style.backgroundColor = "white";
     else header.style.backgroundColor = "transparent";
 })
 
-/*if (window.innerWidth >= 480) {
+function swipeImage(index, imageArea, circelArea, object) {
+    let newIndex = 0;
+    for (let i = 0; i < object.length; i++) {
+        alert(imageName[imageArea].innerHTML);
+        if (imageName[imageArea].innerHTML == object[i].name);
+        newIndex = i+index;
+    }
+    if (newIndex >= maxNum) newIndex = 0;
+    else if (newIndex < 0) newIndex = maxNum-1;
+changeCircle(circelArea, newIndex);
+}
+
+/*if (window.innerWidth >= 560) {
     window.addEventListener("resize", checkSize);
 }
 
@@ -114,14 +150,12 @@ function changeImage(indexChange) {
 }
 }//changeOneImage*/
 
+
 function displayText(paragraph) {
     if (paragraph.style.visibility == "hidden")
     paragraph.style.visibility = "visible";
     else paragraph.style.visibility = "hidden";
 }
-
-
-
 
 function changeCircle(area, index) {
     for (let i = 0; i < area.length; i++) {
@@ -151,9 +185,15 @@ function changeCircle(area, index) {
                 document.getElementsByClassName("mobileImageImage")[i-1].style.backgroundSize = "100VW";
                 productText[i-1].innerHTML = objectArray[index].text;
                 moreInfoText[i-1].innerHTML = objectArray[index].moreInfo;
+
+                imageName[i-1].innerHTML = objectArray[index].text;
+                imgText[i-1].innerHTML = objectArray[index].moreInfo;
+                imgDiv[i-1].style.backgroundImage = "url(" + objectArray[index].image + ")";
+                imgDiv[i-1].style.backgroundSize = "100% 100%";
                 
             }//if
     }//for
+
 }//function
 
 function findObjectArray(i) {
@@ -190,9 +230,11 @@ document.getElementById("message").innerHTML = "";
     function alterHamburgerMeny() {
         if (hamburgerMenu.style.visibility == "hidden") {
             hamburgerMenu.style.visibility = "visible";
+            document.getElementById("ham").style.transform = "rotate(90deg)";
             
           } else {
             hamburgerMenu.style.visibility = "hidden";
+            document.getElementById("ham").style.transform = "rotate(0deg)";
           }
     }
 

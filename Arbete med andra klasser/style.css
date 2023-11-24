@@ -1,4 +1,5 @@
 body {
+    margin: 0px;
     max-width: 576px;
     width: 100vw;
     display: flex;
@@ -27,7 +28,7 @@ header {
 }
 
 nav {
-    margin-top: 25px;
+    margin-top: -50px;
     text-align: center;
     max-width: 576px;
     width: 90vw;
@@ -54,18 +55,18 @@ nav a {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    top: 0px;
-    right: 0vw;
-    width: 50vw;
+    top: 75px;
+    left: 0vw;
+    width: 65vw;
     height: 800px;
     background-color: white;
     z-index: 2;
 }
 
 #hamburgerMenu a {
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid rgb(226, 226, 226);
     height: 91px;
-    width: 47vw;
+    width: calc(inherit + 3vw);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,11 +77,12 @@ nav a {
 
 #hamburgerLogos {
     height: 91px;
-    width: 45vw;
+    width: inherit;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    border-bottom: 1px solid rgb(226, 226, 226);
 }
 
 .imgButtons {
@@ -105,18 +107,14 @@ nav a {
     height: 100%;
 }
 
-
-.mobileImageImage {
-    display: block;
-    height: 280px;
-    max-width: 90vw;
-    
-   
-}
-
 #search, #cart {
     
     margin-right: 5%;
+}
+
+#ham, #logo {
+    margin-left: 3%;
+
 }
 
 .mobileImage {
@@ -131,7 +129,9 @@ nav a {
 }
 
 #mailh1 {
+    margin-top: 35px;
     margin-bottom: 35px;
+    width: 85vw;
 }
 
 .mobileImage button {
@@ -140,7 +140,6 @@ border:none;
 }
 
 #borderButton {
-    border: 2px solid black;
     padding: 8px 20px;
     font-size: 16px;
 }
@@ -162,15 +161,21 @@ border:none;
 
 #firstImageFooter img {
     width: 36px;
-    
 }
 
 #firstImageFooter div{
+    width: 25vw;
     font-size: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+}
+
+#firstImageFooter span {
+    width: 33vw;
+    text-align: center;
+
 }
 
 #mainImage {
@@ -186,7 +191,7 @@ border:none;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    height: 388px;
+    height: 340px;
     width: 40vw;
     z-index: 3;
     padding: 5vw;
@@ -219,9 +224,10 @@ border:none;
 
 .smallerMobileImages .readMore {
     
-    background-color: inherit;
+    background-color: black;
+    color: white;
     height: 50px;
-    margin-top: 10px;
+    margin-top: 280px;
 }
 
 .circles {
@@ -231,11 +237,11 @@ border:none;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: inherit;
+    background-color: transparent;
 }
 
 .circles button {
-    background-color: inherit;
+    background-color: transparent;
 }
 
 #message {
@@ -256,13 +262,17 @@ border:none;
     margin-bottom: -10px;
 }
 
+#productName {
+    margin-top: 100px;
+}
+
 a {
     text-decoration: none;
     color: black;
 }
 
 .marginLeft {
-    margin-left: 5%;
+    margin-left: 7.5%;
 }
 
 #newsLetter {
@@ -275,15 +285,18 @@ a {
     align-items: flex-start;
     justify-content: center;
     text-align: left;
+    background-image: url("images/poster.svg");
+    background-size: 100vw;
     font-size: 16px;
 }
 
 #mail {
     top: 0px;
-    margin-left: 5%;
     position: absolute;
     text-align: left;
     z-index: 1;
+    width: 100vw;
+    height: 800px;
 }
 
 #form {
@@ -292,16 +305,27 @@ a {
     margin: 0px;
     width: 80vw;
     background-color: white;
-    top: 0px;
+    top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     z-index: 2;
 }
 
+.checkMarks {
+   font-size: 28px;
+   visibility: hidden;
+   
+}
+
+footer form .checkMarks {
+    margin-top: 15px;
+    border-bottom: 1px solid white;
+}
+
 #form h3 {
-    width: 20vw;
+    width: 90%;
 }
 
 input {
@@ -310,12 +334,15 @@ border-bottom: 1px solid black;
 border-top: none; 
 border-right: none; 
 border-left: none; 
+margin-top: 30px;
     
 }
 
+
 #arrowButton {
     background-color: inherit;
-    margin-top: 80px;
+    margin-top: 30px;
+    box-shadow: none;
 }
 
 #arrow {
@@ -342,7 +369,7 @@ background-color: inherit;
 }
 
 #downloadApp {
-    height: 530px;
+    height: 691px;
     width: inherit;
     display: flex;
     flex-direction: column;
@@ -352,7 +379,7 @@ background-color: inherit;
 
 #phones {
     height: 458px;
-    margin-top: -50px;
+    margin-top: -54px;
     margin-bottom: -150px;
 }
 
@@ -382,11 +409,13 @@ background-color: inherit;
 
 footer {
     height: 279px;
-    background-color: #9C9C9C;
+    background-color: black;
+    color: white;
     width: inherit;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    text-align: left;
 }
 
 footer form {
@@ -396,7 +425,15 @@ footer form {
 }
 
 #left, #right {
-    margin: 0px 5vw;
+    margin-left: 7.5vw;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#right {
+    padding-right: 10vw;
 }
 
 #left p {
@@ -404,10 +441,14 @@ footer form {
 }
 
 .smallMailInput {
-    width: inherit;
+    width: 90%;
     height: 20px;
     background-color: transparent;
     font-size: 14px;
+    border-bottom: 1px solid white;
+    margin-right: 0px;
+    color: white;
+    
 }
 
 #smallButton, #smallArrow {
@@ -417,21 +458,25 @@ footer form {
     background-color: transparent;
 }
 
-#smallArrow {
-    margin-bottom: -10px;
-}
-
 #smallButton {
-    border-bottom: 1px solid black;
-    margin-bottom: 6px;
+    border-bottom: 1px solid white;
+    margin-bottom: -22px;
 }
 
 @media screen and (min-width: 576px) {
 
+    body {
+
+        max-width: 1440px;  
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+
     nav {
         margin-top: 35px;
-        max-width: 1440px;
-    width: 90vw;
+        max-width: inherit;
+        width: inherit;
     }
 
     #cart {
@@ -439,8 +484,8 @@ footer form {
     }
 
     header {
-        max-width: 1440px;
-        width: 100vw;
+        max-width: inherit;
+        width: inherit;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -448,22 +493,30 @@ footer form {
 
     }
 
-body {
+    #newsLetter {
+        margin-top: -200px;
+        max-width: inherit;
+        width: inherit;
+        max-height: 900px;
+        background-image: url("images/hero.svg");
+        background-size: cover;
+        margin-bottom: 0px;
 
-    max-width: 1440px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-}
+    }
+
+    #productName {
+        margin-top: 400px;
+    }
 
 .imgButtons {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: inherit;
+    max-width: inherit;
+    height: 100%;
+    margin-top: 0vh;
 }
 
 .imgDiv {
@@ -471,11 +524,19 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: calc(100vw/3);
+    height: 700px;
+    position: relative;
+    margin-top: -40vh;
 }
 
-.imgdiv button {
-    margin: 5% 0px;
+.slide {
+    display: flex;
+    flex-direction: row;
+    width: inherit;
+    margin: 0px 1vw;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -483,12 +544,26 @@ body {
     visibility: visible;
 }
 
-.mobileImage {
+.smallerMobileImages, #hamburgerMenu, #ham {
     visibility: hidden;
     width: 0px;
     height: 0px;
 }
 
+}
+
+@media screen and (min-width: 800px) {
+
+    .imgDiv{
+        margin-top: -30vh;
+    } 
+}
+
+@media screen and (min-width: 1100px) {
+
+    .imgDiv{
+        margin-top: -20vh;
+    } 
 }
 
 
