@@ -28,27 +28,13 @@ circleClass = document.getElementsByClassName("circles"), productText = document
 moreInfoText = document.getElementsByClassName("moreInfoText"), firstProductButton = document.getElementById("borderButton"),
 mainInfo = document.getElementById("mainInfo"), mainImage = document.getElementsByClassName("mainImage"),
 mainText = document.getElementById("mainText"), formArrows = document.getElementsByClassName("formArrows")
-
 ;
 
 var numberOfImgDivs = imgDiv.length, randomNumber = Math.floor(Math.random() * (maxNum-(numberOfImgDivs-1)));
 
-
-
-/*Anropa ny funktion med ny area.
-Den första bilden har med circelarea 1, images 1 i kallelse osv.
-Kolla med rubrik vilket index som är aktuellt.
-Om det t.ex. är index 1 så flyttas allt till index 2 i objekt via let temp = index  + 1.
-Om nytt temp >= längden på objektet, så ska temp bli 0.
-När allt har bytts ut ska cirkelarean kallas med värdet av temp. changeCircle(circleAreax, temp)
-
-Lägg id = "0". När bild byts ska index returneras som id.*/
-
 changeCircle(circleArea1, 0);
 changeCircle(circleArea2, 0);
 changeCircle(circleArea3, 0);
-
-
 
 mainText.style.visibility = "hidden";
 hamburgerMenu.style.visibility = "hidden";
@@ -69,7 +55,6 @@ if (message == "Din mailadress har lagts till.") {
     }
     formArrows[1].style.width = "28px";
     formArrows[1].style.marginBottom = "-1px";
-    //document.getElementById("smallButton").style.borderBottom = "0px";
     
 }
 
@@ -87,68 +72,17 @@ document.addEventListener("scroll", (event) => {
 function swipeImage(index, imageArea, circelArea, object) {
     let newIndex = 0;
     for (let i = 0; i < object.length; i++) {
-        alert(imageName[imageArea].innerHTML);
-        if (imageName[imageArea].innerHTML == object[i].name);
+        if (imageName[imageArea].innerHTML == object[i].name) {
         newIndex = i+index;
+        break;
+        }
     }
     if (newIndex >= maxNum) newIndex = 0;
     else if (newIndex < 0) newIndex = maxNum-1;
 changeCircle(circelArea, newIndex);
 }
 
-/*if (window.innerWidth >= 560) {
-    window.addEventListener("resize", checkSize);
-}
 
-window.addEventListener("resize", checkSize);
-
-function checkSize() {
-   if (window.innerWidth >= 560) {
-   createThreeDivs();
-}
-}*/
-
-/*function createThreeDivs () {
-    for (let i = 0; i < numberOfImgDivs; i++) {
-        imageName[i].innerHTML = images[randomNumber + i].name;
-        imageSrc[i].src = images[randomNumber + i].image;
-        imgText[i].innerHTML = images[randomNumber + i].text;
-    
-    }
-}*//*
-
-function changeImage(indexChange) {
-    if (window.innerWidth < 480) {
-        changeOneImage(indexChange);
-        return;
-    }
-    for (let i = 0; i < maxNum; i++) {
-        if (imageName[0].innerHTML == images[i].name) {
-            if ((i + indexChange) >= 0 && (i + indexChange + numberOfImgDivs) <= maxNum) {
-                for (let j = 0; j < numberOfImgDivs; j++) {
-            imageName[j].innerHTML = images[i + indexChange + j].name;
-            imageSrc[j].src = images[i + indexChange + j].image;
-            imgText[j].innerHTML = images[i + indexChange + j].text;
-                }
-            }
-    
-        }//if
-    }//for
-
-}//function changeImage
-
-/*function changeOneImage(indexChange) {
-    for (let i = 0; i < maxNum; i++) {
-    if (imageName[1].innerHTML == images[i].name) {
-        if ((i + indexChange) >= 0 && (i + indexChange) <= maxNum) {
-            imageName[1].innerHTML = images[i + indexChange].name;
-            imageSrc[1].src = images[i + indexChange].image;
-            imgText[1].innerHTML = images[i + indexChange].text;
-            return;
-        }
-    }
-}
-}//changeOneImage*/
 
 
 function displayText(paragraph) {
@@ -186,8 +120,8 @@ function changeCircle(area, index) {
                 productText[i-1].innerHTML = objectArray[index].text;
                 moreInfoText[i-1].innerHTML = objectArray[index].moreInfo;
 
-                imageName[i-1].innerHTML = objectArray[index].text;
-                imgText[i-1].innerHTML = objectArray[index].moreInfo;
+                imageName[i-1].innerHTML = objectArray[index].name;
+                imgText[i-1].innerHTML = objectArray[index].text;
                 imgDiv[i-1].style.backgroundImage = "url(" + objectArray[index].image + ")";
                 imgDiv[i-1].style.backgroundSize = "100% 100%";
                 
