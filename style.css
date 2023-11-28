@@ -365,6 +365,7 @@ input {
 
 #downloadApp {
   height: 691px;
+  max-width: inherit;
   width: inherit;
   display: flex;
   flex-direction: column;
@@ -384,7 +385,7 @@ input {
 }
 #downloadApp p {
   text-align: left;
-  width: 60vw;
+  width: 90vw;
   font-size: 16px;
   font-weight: 500;
 }
@@ -701,8 +702,8 @@ footer form {
 @media screen and (min-width: 800px) {
 
   .downloadAppTextIcons p {
-    max-width: inherit;
-    width: 100%;
+    max-width: 50vw;
+    width: 50vw;
     
   }
 
