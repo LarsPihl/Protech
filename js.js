@@ -1,13 +1,13 @@
 var images1 = [
-    {name : "name 11", image : "images/pinkWatch.svg", moreInfo : "More info", text : "Text about Pink Watch"},
-    {name : "name 12", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", moreInfo : "More info", text : "Text about object 2"},
-    {name : "name 13", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", moreInfo : "More info", text : "Text about object 3"}
+    {name : "Glasögon 1", image : "images/Glasses_desktop_1.svg", moreInfo : "Mer Info", text : "Techvision"},
+    {name : "Glasögon 2", image : "images/Glasses_desktop_2.svg", moreInfo : "Mer info", text : "Techvision"},
+    {name : "Glasögon 3", image : "images/Glasses_desktop_3.svg", moreInfo : "Mer info", text : "Techvision"}
 ];
 
 var images2 = [
-    {name : "name 21", image : "images/sunburstGlasses.svg", moreInfo : "More info", text : "Text about Glasses"},
-    {name : "name 22", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", moreInfo : "More info", text : "Text about object 2"},
-    {name : "name 23", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", moreInfo : "More info", text : "Text about object 3"}
+    {name : "Skor 1", image : "images/Render1.svg", moreInfo : "Mer info", text : "LightStrider"},
+    {name : "Skor 2", image : "images/Render2.svg", moreInfo : "Mer info", text : "LightStrider"},
+    {name : "Skor 3", image : "images/Render3.svg", moreInfo : "Mer info", text : "LightStrider"}
     
 ];
 
@@ -31,6 +31,7 @@ mainText = document.getElementById("mainText"), formArrows = document.getElement
 ;
 
 var numberOfImgDivs = imgDiv.length, randomNumber = Math.floor(Math.random() * (maxNum-(numberOfImgDivs-1)));
+
 
 changeCircle(circleArea1, 0);
 changeCircle(circleArea2, 0);
@@ -81,9 +82,6 @@ function swipeImage(index, imageArea, circelArea, object) {
     else if (newIndex < 0) newIndex = maxNum-1;
 changeCircle(circelArea, newIndex);
 }
-
-
-
 
 function displayText(paragraph) {
     if (paragraph.style.visibility == "hidden")

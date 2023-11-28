@@ -481,6 +481,10 @@ footer form {
   border: none;
 }
 
+.imgName, .productHeader {
+  visibility: hidden;
+}
+
 @media screen and (min-width: 576px) {
   body {
     max-width: 1440px;
