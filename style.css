@@ -226,7 +226,7 @@ nav a {
   background-color: black;
   color: white;
   height: 50px;
-  margin-top: 280px;
+  margin-top: 120px;
 }
 
 .circles {
@@ -499,6 +499,10 @@ footer form {
     width: 90vw;
   }
 
+  #middle {
+    visibility: hidden;
+  }
+
   #cart {
     margin-left: 0px;
   }
@@ -574,12 +578,14 @@ footer form {
 
 .imgDiv .imgText {
     position: absolute;
+    font-size: 20px;
+    background-color: white;
     top: 37.5%;
 }
 
 .imgDiv #borderButton {
     position: absolute;
-    top: 450px;
+    top: 445px;
 }
 
 .slideButtons {
@@ -615,11 +621,13 @@ footer form {
 
   .desktopNavLink {
     width: fit-content;
+    padding: 1%;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: 0.54px;
+    flex-wrap: wrap;
   }
 
   .desktopIcon:hover {
@@ -641,7 +649,6 @@ footer form {
 
   #downloadApp {
     flex-direction: row;
-    width: 90%;
     height: fit-content;
     padding-top: 5%;
     padding-bottom: 5%;
@@ -654,12 +661,13 @@ footer form {
   }
 
   .downloadAppTextIcons {
-    width: 100%;
     margin-right: 5%;
   }
 
   .downloadAppTextIcons p {
-    width: 250px;
+    max-width: 230px;
+    width: 100%;
+    
   }
 
   #logosAndButton {
@@ -681,7 +689,7 @@ footer form {
 
   #bottomLogo {
     position: absolute;
-    right: 1vw;
+    right: 2vw;
     bottom: 10px;
     visibility: visible;
     width: 100px;
@@ -691,6 +699,17 @@ footer form {
 
 
 @media screen and (min-width: 800px) {
+
+  .downloadAppTextIcons p {
+    max-width: inherit;
+    width: 100%;
+    
+  }
+
+  #middle {
+    visibility: visible;
+    margin-left: -10vw;
+  }
 
   .imgDiv{
       margin-top: -30vh;
@@ -704,11 +723,16 @@ footer form {
       top: 35%;
   }
   .imgDiv #borderButton {
-      top: 72%;
+      top: 71%;
   }
 }
 
 @media screen and (min-width: 1100px) {
+
+  #middle {
+    visibility: visible;
+    margin-left: initial;
+  }
 
   .imgDiv{
       margin-top: -20vh;
@@ -723,7 +747,7 @@ footer form {
   }
   
   .imgDiv #borderButton {
-      top: 82%;
+      top: 81%;
   }
 }
 

@@ -132,49 +132,61 @@ require "functions.php";
     <div><img src="images/securePayment.svg" alt="Secure Payment"><span>Säker betalning</span></div>
     <div><img src="images/klarna.svg" alt="Klarna Logo"><span>Fler betalningsalternativ</span></div>
 
-  </div><!--firstImageFooter-->
+    </div><!--firstImageFooter-->
 
-  <div class="mobileImage smallerMobileImages mobileImageImage" id="mobileImage2">
+<div class = "mobileImage smallerMobileImages mobileImageImage" id = "mobileImage2">
 
-    <h1 class="productHeader marginLeft">Produktnamn</h1>
-    <h1 class="marginLeft"><a href="index.php" class="moreInfoText">Mer information</a></h1>
-    <p class="mobileImageText hidden" onclick="displayText(productText[0]);"></p>
-    <button class="marginLeft readMore" id="borderButton">Läs mer om produkten</button>
-    <div class="circles">
-      <button onclick="changeCircle(circleArea1, 0)"><img class="circleArea1" src="images/circle.svg" alt="Circle"></button>
-      <button onclick="changeCircle(circleArea1, 1)"><img class="circleArea1" src="images/circle.svg" alt="Circle"></button>
-      <button onclick="changeCircle(circleArea1, 2)"><img class="circleArea1" src="images/circle.svg" alt="Circle"></button>
-    </div><!--dv circles-->
+<h1 class = "productHeader marginLeft">Produktnamn</h1>
+<h1 class = "marginLeft"><a href = "index.php" class = "moreInfoText">Mer information</a></h1>
+<p class = "mobileImageText hidden" onclick = "displayText(productText[0]);"></p>
+<div class = "slideButtons">
+  <button class = "slide" onclick = "swipeImage(-1, 0, circleArea1, images1)"><img width = "30px" src = "images/arrow_left.png" alt = ""></button>
+<button class = "slide" onclick = "swipeImage(1, 0, circleArea1, images1)"><img width = "30px" src = "images/arrow_right.png" alt = ""></button>
+</div>
+<button class = "marginLeft readMore" id = "borderButton">Läs mer om produkten</button>
+<div class = "circles">
+<button onclick = "changeCircle(circleArea1, 0)"><img class = "circleArea1" src = "images/circle.svg" alt = "Circle"></button>
+<button onclick = "changeCircle(circleArea1, 1)"><img class = "circleArea1" src = "images/circle.svg" alt = "Circle"></button>
+<button onclick = "changeCircle(circleArea1, 2)"><img class = "circleArea1" src = "images/circle.svg" alt = "Circle"></button>
+</div><!--dv circles-->
 
-  </div><!--mobileImage2-->
+</div><!--mobileImage2-->
 
-  <div class="mobileImage smallerMobileImages mobileImageImage" id="mobileImage3">
+<div class = "mobileImage smallerMobileImages mobileImageImage" id = "mobileImage3">
 
-    <h1 class="productHeader marginLeft">Produktnamn</h1>
-    <h1 class="marginLeft"><a href="index.php" class="moreInfoText">Mer information</a></h1>
-    <p class="mobileImageText hidden" onclick="displayText(productText[1]);"></p>
-    <button id="borderButton" class="marginLeft readMore">Läs mer om produkten</button>
-    <div class="circles">
-      <button onclick="changeCircle(circleArea2, 0)"><img class="circleArea2" src="images/circle.svg" alt="Circle"></button>
-      <button onclick="changeCircle(circleArea2, 1)"><img class="circleArea2" src="images/circle.svg" alt="Circle"></button>
-      <button onclick="changeCircle(circleArea2, 2)"><img class="circleArea2" src="images/circle.svg" alt="Circle"></button>
-    </div><!--dv circles-->
+<h1 class = "productHeader marginLeft">Produktnamn</h1>
+<h1 class = "marginLeft"><a href = "index.php" class = "moreInfoText">Mer information</a></h1>
+<p class = "mobileImageText hidden" onclick = "displayText(productText[1]);"></p>
+<div class = "slideButtons">
+  <button class = "slide" onclick = "swipeImage(-1, 1, circleArea2, images2)"><img width = "30px" src = "images/arrow_left.png" alt = ""></button>
+<button class = "slide" onclick = "swipeImage(1, 1, circleArea2, images2)"><img width = "30px" src = "images/arrow_right.png" alt = ""></button>
+</div>
+<button id = "borderButton" class = "marginLeft readMore">Läs mer om produkten</button>
+<div class = "circles">
+<button onclick = "changeCircle(circleArea2, 0)"><img class = "circleArea2" src = "images/circle.svg" alt = "Circle"></button>
+<button onclick = "changeCircle(circleArea2, 1)"><img class = "circleArea2" src = "images/circle.svg" alt = "Circle"></button>
+<button onclick = "changeCircle(circleArea2, 2)"><img class = "circleArea2" src = "images/circle.svg" alt = "Circle"></button>
+</div><!--dv circles-->
 
-  </div><!--mobileImage3-->
+</div><!--mobileImage3-->
 
-  <div class="mobileImage smallerMobileImages mobileImageImage" id="mobileImage4">
+<div class = "mobileImage smallerMobileImages mobileImageImage" id = "mobileImage4">
 
-    <h1 class="productHeader marginLeft">Produktnamn</h1>
-    <h1 class="marginLeft"><a href="index.php" class="moreInfoText">Mer information</a></h1>
-    <p class="mobileImageText hidden" onclick="displayText(productText[2]);"></p>
-    <button id="borderButton" class="marginLeft readMore">Läs mer om produkten</button>
-    <div class="circles">
-      <button onclick="changeCircle(circleArea3, 0)"><img class="circleArea3" src="images/circle.svg" alt="Circle"></button>
-      <button onclick="changeCircle(circleArea3, 1)"><img class="circleArea3" src="images/circle.svg" alt="Circle"></button>
-      <button onclick="changeCircle(circleArea3, 2)"><img class="circleArea3" src="images/circle.svg" alt="Circle"></button>
-    </div><!--dv circles-->
+<h1 class = "productHeader marginLeft">Produktnamn</h1>
+<h1 class = "marginLeft"><a href = "index.php" class = "moreInfoText">Mer information</a></h1>
+<p class = "mobileImageText hidden" onclick = "displayText(productText[2]);"></p>
+<div class = "slideButtons">
+  <button class = "slide" onclick = "swipeImage(-1, 2, circleArea3, images3)"><img width = "30px" src = "images/arrow_left.png" alt = ""></button>
+<button class = "slide" onclick = "swipeImage(1, 2, circleArea3, images3)"><img width = "30px" src = "images/arrow_right.png" alt = ""></button>
+</div>
+<button id = "borderButton" class = "marginLeft readMore">Läs mer om produkten</button>
+<div class = "circles">
+<button onclick = "changeCircle(circleArea3, 0)"><img class = "circleArea3" src = "images/circle.svg" alt = "Circle"></button>
+<button onclick = "changeCircle(circleArea3, 1)"><img class = "circleArea3" src = "images/circle.svg" alt = "Circle"></button>
+<button onclick = "changeCircle(circleArea3, 2)"><img class = "circleArea3" src = "images/circle.svg" alt = "Circle"></button>
+</div><!--dv circles-->
 
-  </div><!--mobileImage4-->
+</div><!--mobileImage4-->
 
   <div id="downloadApp">
     <img id="phones" src="images/mobiler.svg" alt="">
@@ -218,7 +230,7 @@ require "functions.php";
     </div>
 
     <div class="hidden" id="middle">
-      <p>Vanliga Frågor</p>
+      <h4>Vanliga Frågor</h4>
       <p>Om Oss</p>
       <p>Karriär</p>
       <p>Hållbarhet</p>

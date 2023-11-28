@@ -12,7 +12,7 @@ var images2 = [
 ];
 
 var images3 = [
-    {name : "name 31", image : "images/redShoes.svg", moreInfo : "More info", text : "Text about Shoes"},
+    {name : "name 31", image : "images/redShoes.svg", moreInfo : "", text : "Text about Shoes"},
     {name : "name 32", image : "https://www.sony.se/image/d871cec13c1b5860e8f2d262b5bd52aa?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9", moreInfo : "More info", text : "Text about object 2"},
     {name : "name 33", image : "https://www.elgiganten.se/image/dv_web_D1800010021494660/602695/samsung-85-cu8075-4k-led-smart-tv-2023.jpg", moreInfo : "More info", text : "Text about object 3"}
 ];
@@ -78,7 +78,7 @@ function swipeImage(index, imageArea, circelArea, object) {
         break;
         }
     }
-    if (newIndex >= maxNum) newIndex = 0;
+    if (newIndex >= object.length) newIndex = 0;
     else if (newIndex < 0) newIndex = maxNum-1;
 changeCircle(circelArea, newIndex);
 }
@@ -116,7 +116,8 @@ function changeCircle(area, index) {
                 document.getElementsByClassName("mobileImageImage")[i-1].style.backgroundImage = "url(" + objectArray[index].image + ")";
                 document.getElementsByClassName("mobileImageImage")[i-1].style.backgroundSize = "100VW";
                 productText[i-1].innerHTML = objectArray[index].text;
-                moreInfoText[i-1].innerHTML = objectArray[index].moreInfo;
+                moreInfoText[i-1].style.backgroundColor = "white";
+                moreInfoText[i-1].innerHTML = objectArray[index].text;
 
                 imageName[i-1].innerHTML = objectArray[index].name;
                 imgText[i-1].innerHTML = objectArray[index].text;
