@@ -64,9 +64,9 @@ require "functions.php";
         revolutionerar hur du interagerar med
         dina enheter</p>
       <p class="hidden" id="mainText" onclick="displayText(mainText);"></p>
-      <button id="borderButton" class="marginLeft">Läs mer om oss</button>
+      <button id = "läsMer" class="borderButton marginLeft">Läs mer om oss</button>
       <br>
-      <button id="borderButton" class="blackButton marginLeft" onclick="changeNewsLetter(1)">Prenumerera på vårt nyhetsbrev</button>
+      <button id = "prem" class="borderButton blackButton marginLeft" onclick="changeNewsLetter(1)">Prenumerera på vårt nyhetsbrev</button>
     </div>
 
     <div id="form">
@@ -96,7 +96,7 @@ require "functions.php";
   <button class = "slide" onclick = "swipeImage(-1, 0, circleArea1, images1)"><img width = "30px" src = "images/arrow_left.png" alt = ""></button>
 <button class = "slide" onclick = "swipeImage(1, 0, circleArea1, images1)"><img width = "30px" src = "images/arrow_right.png" alt = ""></button>
 </div>
-<button class = "marginLeft readMore" id = "borderButton">Läs mer</button>
+<button class = "marginLeft readMore borderButton">Läs mer</button>
 </div>
 
 <div class = "imgDiv hidden">
@@ -106,7 +106,7 @@ require "functions.php";
   <button class = "slide" onclick = "swipeImage(-1, 1, circleArea2, images2)"><img width = "30px" src = "images/arrow_left.png" alt = ""></button>
 <button class = "slide" onclick = "swipeImage(1, 1, circleArea2, images2)"><img width = "30px" src = "images/arrow_right.png" alt = ""></button>
 </div>
-<button class = "marginLeft readMore" id = "borderButton">Läs mer</button>
+<button class = "marginLeft readMore borderButton">Läs mer</button>
 </div>
 
 <div class = "imgDiv hidden">
@@ -116,7 +116,7 @@ require "functions.php";
   <button class = "slide" onclick = "swipeImage(-1, 2, circleArea3, images3)"><img width = "30px" src = "images/arrow_left.png" alt = ""></button>
 <button class = "slide" onclick = "swipeImage(1, 2, circleArea3, images3)"><img width = "30px" src = "images/arrow_right.png" alt = ""></button>
 </div>
-<button class = "marginLeft readMore" id = "borderButton">Läs mer</button>
+<button class = "marginLeft readMore borderButton">Läs mer</button>
 </div>
 
 
@@ -143,7 +143,7 @@ require "functions.php";
   <button class = "slide" onclick = "swipeImage(-1, 0, circleArea1, images1)"><img width = "30px" src = "images/arrow_left.png" alt = ""></button>
 <button class = "slide" onclick = "swipeImage(1, 0, circleArea1, images1)"><img width = "30px" src = "images/arrow_right.png" alt = ""></button>
 </div>
-<button class = "marginLeft readMore" id = "borderButton">Läs mer om produkten</button>
+<button class = "marginLeft readMore borderButton">Läs mer om produkten</button>
 <div class = "circles">
 <button onclick = "changeCircle(circleArea1, 0)"><img class = "circleArea1" src = "images/circle.svg" alt = "Circle"></button>
 <button onclick = "changeCircle(circleArea1, 1)"><img class = "circleArea1" src = "images/circle.svg" alt = "Circle"></button>
@@ -161,7 +161,7 @@ require "functions.php";
   <button class = "slide" onclick = "swipeImage(-1, 1, circleArea2, images2)"><img width = "30px" src = "images/arrow_left.png" alt = ""></button>
 <button class = "slide" onclick = "swipeImage(1, 1, circleArea2, images2)"><img width = "30px" src = "images/arrow_right.png" alt = ""></button>
 </div>
-<button id = "borderButton" class = "marginLeft readMore">Läs mer om produkten</button>
+<button class = "borderButton marginLeft readMore">Läs mer om produkten</button>
 <div class = "circles">
 <button onclick = "changeCircle(circleArea2, 0)"><img class = "circleArea2" src = "images/circle.svg" alt = "Circle"></button>
 <button onclick = "changeCircle(circleArea2, 1)"><img class = "circleArea2" src = "images/circle.svg" alt = "Circle"></button>
@@ -179,7 +179,7 @@ require "functions.php";
   <button class = "slide" onclick = "swipeImage(-1, 2, circleArea3, images3)"><img width = "30px" src = "images/arrow_left.png" alt = ""></button>
 <button class = "slide" onclick = "swipeImage(1, 2, circleArea3, images3)"><img width = "30px" src = "images/arrow_right.png" alt = ""></button>
 </div>
-<button id = "borderButton" class = "marginLeft readMore">Läs mer om produkten</button>
+<button class = "borderButton marginLeft readMore">Läs mer om produkten</button>
 <div class = "circles">
 <button onclick = "changeCircle(circleArea3, 0)"><img class = "circleArea3" src = "images/circle.svg" alt = "Circle"></button>
 <button onclick = "changeCircle(circleArea3, 1)"><img class = "circleArea3" src = "images/circle.svg" alt = "Circle"></button>
@@ -188,8 +188,13 @@ require "functions.php";
 
 </div><!--mobileImage4-->
 
+<div class = "hideForDesktop" id = "neckLace">
+  <h3>Förbeställ en av våra produkter redan idag och få ett unikt silverhalsband på köpet!</h3>
+  <button id = "preOrder">Förbeställ</button>
+</div>
+
   <div id="downloadApp">
-    <img id="phones" src="images/mobiler.svg" alt="">
+    <img class = "marginLeft" id="phones" src="images/mockups.svg" alt="">
     <div class="downloadAppTextIcons">
       <h3 class="marginLeft">Ladda ner vår app</h3>
       <p class="marginLeft desktopMargin">Genom att ladda ner vår app kan du enkelt sköta synkronisering
