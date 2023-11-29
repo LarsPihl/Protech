@@ -143,6 +143,17 @@ function changeCircle(area, index) {
                 imgText[i-1].style.color = "white";
                 imgDiv[i-1].style.backgroundImage = "url(" + objectArray[index].image + ")";
                 imgDiv[i-1].style.backgroundSize = "100% 100%";
+                if (window.innerWidth > 1500) {
+    for (let i = 0; i < imgDiv.length; i++) {
+        imgDiv[i].style.backgroundSize = "100%";
+    }
+ }
+
+ else {
+    for (let i = 0; i < imgDiv.length; i++) {
+        imgDiv[i].style.backgroundSize = "100% 100%";
+    }
+ }
                 
             }//if
     }//for
